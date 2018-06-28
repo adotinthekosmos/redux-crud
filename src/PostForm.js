@@ -18,6 +18,7 @@ class PostForm extends Component {
       message
     };
     console.log(data);
+    //{object} is an action
     this.props.dispatch({ type: "ADD_POST", data });
     //remove the value after adding the data to store
     this.getTitle.value = "";
