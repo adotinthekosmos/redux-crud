@@ -4,6 +4,9 @@ const postReducer = (state = [], action) => {
       console.log([...state, action.data]);
       return [...state, action.data];
     }
+    case "DELETE_POST": {
+      return state.filter(post => post.id !== action.id);
+    }
     default:
       return state;
   }

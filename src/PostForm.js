@@ -15,11 +15,12 @@ class PostForm extends Component {
     const data = {
       id: new Date(),
       title,
-      message
+      message,
+      editing: false
     };
     console.log(data);
-    //{object} is an action
-    this.props.dispatch({ type: "ADD_POST", data });
+    //addPost method from mapDispatchToProps
+    this.props.addPost(data);
     //remove the value after adding the data to store
     this.getTitle.value = "";
     this.getMessage.value = "";
@@ -62,5 +63,14 @@ class PostForm extends Component {
     );
   }
 }
-
-export default connect()(PostForm);
+const mapDispatchToProps = dispatch => {
+  return {
+    addPost: data => {
+      dispatch({ type: "ADD_POST", data });
+    }
+  };
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(PostForm);
