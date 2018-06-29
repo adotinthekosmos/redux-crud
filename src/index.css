@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700");
 body {
   margin: 0;
   padding: 0;
-  font-family: "Work Sans", sans-serif;
-  background: #f4f4ef;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
 }
 
 .center {
@@ -21,7 +22,12 @@ a:hover {
 /* Navigation */
 
 .navbar {
-  background: #fff;
+  background-image: linear-gradient(
+    -225deg,
+    #2cd8d5 0%,
+    #c5c1ff 56%,
+    #ffbac3 100%
+  );
   text-align: center;
   padding: 1.5rem 0;
   width: 100%;
@@ -33,10 +39,10 @@ a:hover {
 
 .navbar h2 {
   margin: 0;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 30px;
   letter-spacing: 4px;
-  font-family: "Work Sans", sans-serif;
+  color: #fff;
 }
 
 /* Post Styles */
@@ -46,12 +52,11 @@ a:hover {
   width: 50%;
   margin: 40px auto;
   box-shadow: 0 5px 15px 0 rgba(46, 61, 73, 0.12);
-  font-family: "Work Sans", sans-serif;
 }
 
 .post_heading {
   text-align: center;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 40px;
   color: #636363;
 }
@@ -61,19 +66,26 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .form input {
   height: 44px;
   padding-left: 15px;
   padding-right: 15px;
-  border: 1px solid #dbe2e8;
+  border: none;
   font-size: 14px;
-  border-radius: 2px;
+  border-radius: 5px;
   color: #636363;
-  box-shadow: 0 2px 2px 0 rgba(46, 60, 73, 0.05);
+  box-shadow: 0px 5px 40px 5px #eceff1;
   outline: none;
   width: 80%;
+  transition: all 0.3s ease;
+}
+
+.form input:hover {
+  transform: translateY(-5px);
 }
 
 .form textarea {
@@ -82,13 +94,17 @@ a:hover {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 15px;
-  border: 1px solid #dbe2e8;
   font-size: 14px;
-  border-radius: 2px;
+  border: none;
+  border-radius: 5px;
   color: #636363;
-  font-family: "Work Sans,", sans-serif;
-  box-shadow: 0 2px 2px 0 rgba(46, 60, 73, 0.05);
+  box-shadow: 0px 5px 40px 5px #eceff1;
   outline: none;
+  transition: all 0.3s ease;
+}
+
+.form textarea:hover {
+  transform: translateY(-5px);
 }
 
 /* All Posts */
@@ -108,17 +124,23 @@ a:hover {
   padding: 30px;
   margin-bottom: 20px;
   box-shadow: 10px 10px 12px 0 rgba(46, 60, 73, 0.05);
+  transition: all 0.3s ease;
 }
 
 .form button {
-  background: #02b3e4;
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
   padding: 15px 40px;
   text-align: center;
   color: #fff;
-  font-family: "Work Sans", sans-serif;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   border: none;
   font-size: 20px;
+  transition: all 0.3s ease;
+}
+.form button:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .post_title {
@@ -147,7 +169,7 @@ a:hover {
   text-align: center;
   font-size: 20px;
   padding: 10px 25px;
-  border-radius: 20px;
+  border-radius: 30px;
   cursor: pointer;
   outline: none;
   color: #fff;
@@ -159,9 +181,28 @@ a:hover {
   text-align: center;
   font-size: 20px;
   padding: 10px 25px;
-  border-radius: 20px;
+  border-radius: 30px;
   cursor: pointer;
   margin-right: auto;
   outline: none;
+  color: #fff;
+}
+
+.button-toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-image: linear-gradient(
+    -225deg,
+    #a445b2 0%,
+    #d41872 52%,
+    #ff0066 100%
+  );
+}
+
+.button-toggle i {
+  padding: 0;
+  font-size: 2em;
   color: #fff;
 }
