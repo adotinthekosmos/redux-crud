@@ -1,15 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { deletePost, editPost } from "./actions/Action";
 class Post extends Component {
   render() {
     return (
-      <div>
-        <h2>{this.props.post.title}</h2>
-        <p>{this.props.post.message}</p>
-        <button>Edit</button>
-        <button onClick={e => this.props.deletePost(this.props.post.id, e)}>
-          Delete
-        </button>
+      <div className="post">
+        <h2 className="post_title">{this.props.post.title}</h2>
+        <p className="post_message">{this.props.post.message}</p>
+        <div className="control-buttons">
+          <button
+            className="edit"
+            onClick={e => this.props.editPost(this.props.post.id, e)}
+          >
+            Edit
+          </button>
+          <button
+            className="delete"
+            onClick={e => this.props.deletePost(this.props.post.id, e)}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     );
   }
@@ -18,7 +29,10 @@ class Post extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     deletePost: id => {
-      dispatch({ type: "DELETE_POST", id: id });
+      dispatch(deletePost(id));
+    },
+    editPost: id => {
+      dispatch(editPost(id));
     }
   };
 };

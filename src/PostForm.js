@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { addPost } from "./actions/Action";
 class PostForm extends Component {
   //   constructor(props) {
   //     super(props);
@@ -37,9 +38,9 @@ class PostForm extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Create Post</h1>
-        <form onSubmit={this.handleSubmit}>
+      <div className="mt-5">
+        <h1 className="post_heading">Create Post</h1>
+        <form className="form" onSubmit={this.handleSubmit}>
           <input
             required
             // name="name"
@@ -66,7 +67,7 @@ class PostForm extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     addPost: data => {
-      dispatch({ type: "ADD_POST", data });
+      dispatch(addPost(data));
     }
   };
 };
